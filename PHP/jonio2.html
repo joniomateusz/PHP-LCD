@@ -1,0 +1,62 @@
+﻿<HTML>
+<HEAD>
+	<meta charset="UTF-8">
+	
+	<?php
+	// define variables and set to empty values
+	$nameErr = $emailErr = $genderErr = $websiteErr = "";
+	$name = $email = $gender = $comment = $website = "";
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST") 
+	{
+	  if (empty($_POST["comment"])) 
+	  {
+		$comment = "";
+	  } 
+	  else 
+	  {
+		$comment = test_input($_POST["comment"]);
+	  }
+
+	}
+
+	function test_input($data) 
+	{
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+	}
+	?>
+</HEAD>
+
+<BODY background="tlo.jpg" color="white">
+	
+	<center>
+
+	<font color="white">
+	PROSZE O WPISANIE TEKSTU <br>
+	Tekst ten zostanie wyświetlony na ekranie LCD 
+	</font>
+	
+	<form method="post" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+	
+	  <a> 
+	  <br> 
+	  <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+	  <br>
+	  <br>
+	  <input type="submit" name="submit" value="WYŚLIJ TEKST"
+	</form>
+
+	<?php
+
+		echo $comment;
+
+	?>
+
+</center>
+
+</BODY>
+</HTML>
+

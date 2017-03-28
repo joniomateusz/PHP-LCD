@@ -1,0 +1,14 @@
+<HTML>
+<HEAD>
+	<meta charset="UTF-8">
+</HEAD>
+
+<BODY>
+	<p align="center"> PROSZE O WPISANIE TEKSTU </p>
+
+
+
+
+</BODY>
+</HTML>
+
